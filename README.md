@@ -20,3 +20,4 @@ end)
 ```
 
 Feel free to use and fork. I'm waiting for suggestions and also PRs :).
+Now here's only small example how you can use this class. Soon I will update this README and ofc. I will add more methods.
