@@ -1,7 +1,7 @@
-#MTA Lua collections
+# MTA Lua collections
 
 That simple class allows you to manipulate tables easier in Lua. Here's little example how powerfull this tool is.
-```
+```lua
 local productsCollection = Collection()
 productsCollection:push({name = "Milk", is_liquid = true})
   :push({name = "Orange juice", is_liquid = true})
