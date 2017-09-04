@@ -65,5 +65,21 @@ function Collection.new(parentTable)
         end
     end
 
+    function self:chunk(chunkIndex)
+        local chunkedCollection = Collection()
+        local secondaryCollection = Collection()
+
+        self:forEach(function(collectionItem, index)
+            secondaryCollection:push(collectionItem)
+        
+            if index % chunkIndex == 0 or index == self:count() then
+                chunkedCollection:push(secondaryCollection)
+                secondaryCollection = Collection()
+            end
+        end)
+
+        return chunkedCollection
+    end
+
     return self
 end
