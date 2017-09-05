@@ -81,7 +81,7 @@ function Collection.new(parentTable)
         return chunkedCollection
     end
     
-    function self:map(conditionalFunction)
+    function self:filter(conditionalFunction)
       local mappedCollection = Collection()
       
       self:forEach(function(element)
