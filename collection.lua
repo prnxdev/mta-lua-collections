@@ -82,12 +82,22 @@ function Collection.new(parentTable)
     end
     
     function self:filter(conditionalFunction)
-      local mappedCollection = Collection()
+      local filteredCollection = Collection()
       
       self:forEach(function(element)
         if conditionalFunction(element) then
-          mappedCollection:push(element)
+          filteredCollection:push(element)
         end
+      end)
+      
+      return filteredCollection
+    end
+    
+    function self:map(mapFunction)
+      local mappedCollection = Collection()
+      
+      self:forEach(function(element)
+        mappedCollection:push(mapFunction(element))
       end)
       
       return mappedCollection
