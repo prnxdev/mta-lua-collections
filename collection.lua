@@ -81,11 +81,11 @@ function Collection.new(parentTable)
         return chunkedCollection
     end
     
-    function self:filter(conditionalFunction)
+    function self:filter(filterFunction)
       local filteredCollection = Collection()
       
       self:forEach(function(element)
-        if conditionalFunction(element) then
+        if filterFunction(element) then
           filteredCollection:push(element)
         end
       end)
