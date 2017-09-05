@@ -80,6 +80,18 @@ function Collection.new(parentTable)
 
         return chunkedCollection
     end
+    
+    function self:map(conditionalFunction)
+      local mappedCollection = Collection()
+      
+      self:forEach(function(element)
+        if conditionalFunction(element) then
+          mappedCollection:push(element)
+        end
+      end)
+      
+      return mappedCollection
+    end
 
     return self
 end
